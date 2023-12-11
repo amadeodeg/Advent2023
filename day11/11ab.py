@@ -30,8 +30,8 @@ def distance(a,b,offset):
     result+=offset*len([j for j in emptyRowIdx if j>miny and j<maxy])
     return result
 
-distances=[]
-for a,b in combinations(galaxies,2):
-    distances.append(distance(a,b,1000000-1))
+myOffset=1000000
+#myOffset=2
+distances=[distance(a,b,myOffset-1) for a,b in combinations(galaxies,2)]
 
 print(sum(distances))
